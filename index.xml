@@ -12,10 +12,50 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
+    <lastBuildDate>Sun, 22 Mar 2026 14:16:01 +0800</lastBuildDate>
+    
     
     <atom:link href="https://lloyal-sudo.github.io/anna/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
+    
+    
+
+    <item>
+      <title>1.Linux命令ssh</title>
+      <link>https://lloyal-sudo.github.io/anna/post/anna01/</link>
+      <pubDate>Sun, 22 Mar 2026 14:16:01 &#43;0800</pubDate>
+      <author>xxx@example.com (Anna)</author>
+      <guid>https://lloyal-sudo.github.io/anna/post/anna01/</guid>
+      <description>
+        <![CDATA[<h1>1.Linux命令ssh</h1><p>作者：Anna（xxx@example.com）</p>
+        
+          <h1 id="ssh命令连接服务器">
+<a class="header-anchor" href="#ssh%e5%91%bd%e4%bb%a4%e8%bf%9e%e6%8e%a5%e6%9c%8d%e5%8a%a1%e5%99%a8"></a>
+SSH命令连接服务器
+</h1><ul>
+<li>即使用ssh命令打开另一Linux系统伪终端，从而进行远程操作。<!-- raw HTML omitted --></li>
+</ul>
+<p>SSH&ndash;&gt;secure shell(安全外壳协议)，可简单理解为一种加密方式。</p>
+<h2 id="1基础连接">
+<a class="header-anchor" href="#1%e5%9f%ba%e7%a1%80%e8%bf%9e%e6%8e%a5"></a>
+1.基础连接
+</h2><pre tabindex="0"><code>ssh 远程用户名@远程IP&lt;br&gt;
+#例如：ssh kali@127.0.0.1
+</code></pre><h2 id="2指定端口连接">
+<a class="header-anchor" href="#2%e6%8c%87%e5%ae%9a%e7%ab%af%e5%8f%a3%e8%bf%9e%e6%8e%a5"></a>
+2.指定端口连接
+</h2><pre tabindex="0"><code>ssh -p 端口号 远程用户名@远程IP  #如果ssh默认端口号为22不加-p
+</code></pre><h2 id="3退出连接">
+<a class="header-anchor" href="#3%e9%80%80%e5%87%ba%e8%bf%9e%e6%8e%a5"></a>
+3.退出连接
+</h2><pre tabindex="0"><code>exit
+</code></pre>
+        
+        <hr><p>本文2026-03-22首发于<a href='https://lloyal-sudo.github.io/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
+      </description>
+      
+    </item>
     
   </channel>
 </rss>
