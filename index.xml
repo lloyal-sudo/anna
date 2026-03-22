@@ -12,7 +12,7 @@
     
     <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
     
-    <lastBuildDate>Sun, 22 Mar 2026 14:16:01 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 22 Mar 2026 21:29:28 +0800</lastBuildDate>
     
     
     <atom:link href="https://lloyal-sudo.github.io/anna/index.xml" rel="self" type="application/rss&#43;xml" />
@@ -22,13 +22,77 @@
     
 
     <item>
-      <title>1.Linux命令ssh</title>
+      <title>python应用-爬虫（相关）</title>
+      <link>https://lloyal-sudo.github.io/anna/post/anna02/</link>
+      <pubDate>Sun, 22 Mar 2026 21:29:28 &#43;0800</pubDate>
+      <author>xxx@example.com (Anna)</author>
+      <guid>https://lloyal-sudo.github.io/anna/post/anna02/</guid>
+      <description>
+        <![CDATA[<h1>python应用-爬虫（相关）</h1><p>作者：Anna（xxx@example.com）</p>
+        
+          <h1 id="状态码">
+<a class="header-anchor" href="#%e7%8a%b6%e6%80%81%e7%a0%81"></a>
+状态码
+</h1><ul>
+<li>HTTP状态码&ndash;&gt;用以表示网页服务器超文本传输协议响应状态的三位数字代码。</li>
+</ul>
+<p>常见状态码：</p>
+<ul>
+<li>1xx：消息(请求已被接受，需要继续处理。)</li>
+<li>2xx：成功访问（200OK）</li>
+<li>3xx：重定向（302临时转移至新的url）</li>
+<li>4xx：请求错误（404Not Found）</li>
+<li>5xx:服务器错误（502Bad Gateway）</li>
+</ul>
+<h1 id="with用法">
+<a class="header-anchor" href="#with%e7%94%a8%e6%b3%95"></a>
+with用法
+</h1><p>with语句&ndash;&gt; 核心：上下文管理器
+遵循上下文管理协议，涉及两个方法：
+<strong>enter</strong>：进入代码块前执行，返回资源对象（如文件）并赋值给as后的变量。
+<strong>exit</strong>：代码块执行完毕或发生异常时触发，负责关闭资源、释放锁等清理工作。</p>
+<h3 id="应用场景">
+<a class="header-anchor" href="#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af"></a>
+应用场景：
+</h3><p>1.文件操作：替代手动调用close()，即使读取文件发生异常，文件也会被安全关闭：</p>
+<pre tabindex="0"><code> with open(&#39;text.txt&#39;, &#39;r&#39;) as f :
+    content = f.read()
+        #代码块结束，文件自动关闭
+</code></pre><p>2.线程锁：自动获取和释放锁，避免锁死风险：</p>
+<pre tabindex="0"><code>import threading
+lock = threading.Lock()
+with lock:
+    # 执行需要安全的操作
+    pass
+# 锁自动释放
+</code></pre><p>3.数据库连接：许多数据库驱动支持此语法，确保连接或事物被关闭/回滚。</p>
+<pre tabindex="0"><code>with conn.cursor() as cursor:
+     cursor.execute(&#39;SELECT * FROM users&#39;)
+     date = cursor.fetchall()
+# 游标自动关闭
+</code></pre><p>4.管理多个上下文（等效于嵌套）</p>
+<pre tabindex="0"><code>with open(&#39;a.txt&#39;) as f1, open(&#39;b.txt&#39;) as f2:
+     data1, data2 = f1.read(), f2.read()
+</code></pre><h1 id="响应里面的属性重点">
+<a class="header-anchor" href="#%e5%93%8d%e5%ba%94%e9%87%8c%e9%9d%a2%e7%9a%84%e5%b1%9e%e6%80%a7%e9%87%8d%e7%82%b9"></a>
+响应里面的属性(重点)：
+</h1><p>响应内容：</p>
+        
+        <hr><p>本文2026-03-22首发于<a href='https://lloyal-sudo.github.io/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
+      </description>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>Linux命令ssh</title>
       <link>https://lloyal-sudo.github.io/anna/post/anna01/</link>
       <pubDate>Sun, 22 Mar 2026 14:16:01 &#43;0800</pubDate>
       <author>xxx@example.com (Anna)</author>
       <guid>https://lloyal-sudo.github.io/anna/post/anna01/</guid>
       <description>
-        <![CDATA[<h1>1.Linux命令ssh</h1><p>作者：Anna（xxx@example.com）</p>
+        <![CDATA[<h1>Linux命令ssh</h1><p>作者：Anna（xxx@example.com）</p>
         
           <h1 id="ssh命令连接服务器">
 <a class="header-anchor" href="#ssh%e5%91%bd%e4%bb%a4%e8%bf%9e%e6%8e%a5%e6%9c%8d%e5%8a%a1%e5%99%a8"></a>
