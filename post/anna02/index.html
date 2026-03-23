@@ -145,6 +145,18 @@
       </ul>
     </li>
   </ul>
+
+  <ul>
+    <li><a href="#对多页发起请求">对多页发起请求</a>
+      <ul>
+        <li><a href="#关键字参数翻页">关键字参数翻页</a></li>
+        <li><a href="#补充url编码解码">补充：url编码/解码</a></li>
+        <li><a href="#表单参数">表单参数</a></li>
+        <li><a href="#json参数">json参数</a></li>
+        <li><a href="#使用正则表达式进行批量修改">使用正则表达式进行批量修改</a></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
 </div></div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -282,6 +294,115 @@ with lock:
 <li>点击任意一个请求</li>
 <li>ctrl+f</li>
 </ol>
+<h1 id="请求参数">
+<a class="header-anchor" href="#%e8%af%b7%e6%b1%82%e5%8f%82%e6%95%b0"></a>
+请求参数
+</h1><p>反爬：爬取数据时，网站的阻碍。</p>
+<p>措施：</p>
+<ol>
+<li>添加请求头:检测请求信息</li>
+</ol>
+<ul>
+<li>ua</li>
+<li>referer</li>
+<li>cookie</li>
+<li>其他的补全</li>
+</ul>
+<p>如果所给的请求头有错误， 那么请求一定出错，如果是某一个请求头没有，不一定出错。</p>
+<pre tabindex="0"><code>import requests
+url = &#34;https://www.baidu.com/&#34;
+headers = {
+     &#34;键&#34;：&#34;值&#34; # 开发者工具中寻找，也可自己收集添加到字典，后面直接拿来用。
+}
+response = requests.get(url, headers=headers)
+print(response.text)
+</code></pre><p>cookie可在请求头中携带，也可以单独携带。
+如：</p>
+<pre tabindex="0"><code>cookies = {
+     &#34;key&#34;: &#34;value&#34;
+}
+# 调用
+response = requests.git(url, headers=headers, cookies=cookies)
+</code></pre><h2 id="对多页发起请求">
+<a class="header-anchor" href="#%e5%af%b9%e5%a4%9a%e9%a1%b5%e5%8f%91%e8%b5%b7%e8%af%b7%e6%b1%82"></a>
+对多页发起请求
+</h2><p>在一个网站中，不同页面的url有着一定的规律&mdash;&gt;使用循环与f函数实现url的转换</p>
+<ul>
+<li>
+<pre><code>翻页：
+  需要分析不同页面之间，数据的规律。
+</code></pre>
+</li>
+</ul>
+<h3 id="关键字参数翻页">
+<a class="header-anchor" href="#%e5%85%b3%e9%94%ae%e5%ad%97%e5%8f%82%e6%95%b0%e7%bf%bb%e9%a1%b5"></a>
+关键字参数翻页
+</h3><p>开发者工具：负载（分析url的规律）</p>
+<pre tabindex="0"><code>import requests
+
+# 将 ？ 后面写带的参数 更改为 params 参数传递
+url = &#34;https://movie.douban.com/top250&#34;
+headers = {
+    &#34;user-agent&#34;: &#34;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36 Edg/141.0.0.0&#34;,
+}
+# ?start=0&amp;filter=
+params = {
+    &#34;start&#34;: &#34;25&#34;,
+    &#34;filter&#34;: &#34;&#34;,
+}
+# params 通过关键字参数传递查询字符串参数，参数类型是字典
+response = requests.get(url, headers=headers, params=params)
+print(response.text)
+</code></pre><h3 id="补充url编码解码">
+<a class="header-anchor" href="#%e8%a1%a5%e5%85%85url%e7%bc%96%e7%a0%81%e8%a7%a3%e7%a0%81"></a>
+补充：url编码/解码
+</h3><pre tabindex="0"><code>from urllib import parse
+# url编码：
+res = parse.quote(&#34;壁纸&#34;)
+print(res)
+# url解码：
+print(parse.unquote(&#34;%E5%A3%81%E7%BA%B8&#34;))
+</code></pre><h3 id="表单参数">
+<a class="header-anchor" href="#%e8%a1%a8%e5%8d%95%e5%8f%82%e6%95%b0"></a>
+表单参数
+</h3><ol>
+<li>查询字符串参数：可直接在url通过？携带。可以出现在get&amp;post请求方式中，可以在<strong>开发者工具：负载</strong>中看到相关信息， 比如：username&amp;passward</li>
+<li>表单参数：相关数据在url后面看不到。</li>
+</ol>
+<ul>
+<li>只会出现在post请求中。</li>
+<li>参数形式：字典</li>
+<li>携带方式（只有一种）：</li>
+</ul>
+<pre tabindex="0"><code># data参数携带
+requests.post(url, headers=headers, data={&#34;key&#34;:&#34;value&#34;})
+</code></pre><h3 id="json参数">
+<a class="header-anchor" href="#json%e5%8f%82%e6%95%b0"></a>
+json参数
+</h3><h3 id="使用正则表达式进行批量修改">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f%e8%bf%9b%e8%a1%8c%e6%89%b9%e9%87%8f%e4%bf%ae%e6%94%b9"></a>
+使用正则表达式进行批量修改
+</h3><ol>
+<li>将复制过来的内容改成 key value 在同一行，中间要用东西隔开</li>
+</ol>
+<pre tabindex="0"><code>        accept: */*
+        accept-encoding: gzip, deflate, br, zstd
+</code></pre><ol start="2">
+<li>按 ctrl + r【替换】</li>
+<li>复制任意一行到上面输入框</li>
+<li>修改匹配规则【正则表达式】</li>
+</ol>
+<pre tabindex="0"><code>   .*?: .*
+   (.*?): (.*)
+       # 一个小括号代表一个组
+       # 如果要用第几个组里面的内容，就用$序号
+   $1 $2
+   &#39;$1&#39;: &#39;$2&#39;,
+   &#39;key&#39;: &#39;value&#39;,
+   shift + 4 =&gt; 英文符号
+</code></pre><ol start="5">
+<li>点击最右边 的 “.*”</li>
+</ol>
 </div>
     <footer class="article-footer"><div class="share-wrapper"><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://lloyal-sudo.github.io/anna/post/anna02/&amp;title=python%e5%ba%94%e7%94%a8-%e7%88%ac%e8%99%ab%ef%bc%88%e7%9b%b8%e5%85%b3%ef%bc%89&amp;desc=%20%e7%8a%b6%e6%80%81%e7%a0%81%20HTTP%e7%8a%b6%e6%80%81%e7%a0%81&amp;ndash;&amp;gt;%e7%94%a8%e4%bb%a5%e8%a1%a8%e7%a4%ba%e7%bd%91%e9%a1%b5%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%b6%85%e6%96%87%e6%9c%ac%e4%bc%a0%e8%be%93%e5%8d%8f%e8%ae%ae%e5%93%8d%e5%ba%94%e7%8a%b6%e6%80%81%e7%9a%84%e4%b8%89%e4%bd%8d%e6%95%b0%e5%ad%97%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%b8%b8%e8%a7%81%e7%8a%b6%e6%80%81%e7%a0%81%ef%bc%9a%0a1xx%ef%bc%9a%e6%b6%88%e6%81%af%28%e8%af%b7%e6%b1%82%e5%b7%b2%e8%a2%ab%e6%8e%a5%e5%8f%97%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bb%a7%e7%bb%ad%e5%a4%84%e7%90%86%e3%80%82%29%202xx%ef%bc%9a%e6%88%90%e5%8a%9f%e8%ae%bf%e9%97%ae%ef%bc%88200OK%ef%bc%89%203xx%ef%bc%9a%e9%87%8d%e5%ae%9a%e5%90%91%ef%bc%88302%e4%b8%b4%e6%97%b6%e8%bd%ac%e7%a7%bb%e8%87%b3%e6%96%b0%e7%9a%84url%ef%bc%89%204xx%ef%bc%9a%e8%af%b7%e6%b1%82%e9%94%99%e8%af%af%ef%bc%88404Not%20Found%ef%bc%89%205xx:%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af%ef%bc%88502Bad%20Gateway%ef%bc%89%20with%e7%94%a8%e6%b3%95%20with%e8%af%ad%e5%8f%a5&amp;ndash;&amp;gt;%20%e6%a0%b8%e5%bf%83%ef%bc%9a%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%99%a8%20%e9%81%b5%e5%be%aa%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%8d%8f%e8%ae%ae%ef%bc%8c%e6%b6%89%e5%8f%8a%e4%b8%a4%e4%b8%aa%e6%96%b9%e6%b3%95%ef%bc%9a%20enter%ef%bc%9a%e8%bf%9b%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%89%8d%e6%89%a7%e8%a1%8c%ef%bc%8c%e8%bf%94%e5%9b%9e%e8%b5%84%e6%ba%90%e5%af%b9%e8%b1%a1%ef%bc%88%e5%a6%82%e6%96%87%e4%bb%b6%ef%bc%89%e5%b9%b6%e8%b5%8b%e5%80%bc%e7%bb%99as%e5%90%8e%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%20exit%ef%bc%9a%e4%bb%a3%e7%a0%81%e5%9d%97%e6%89%a7%e8%a1%8c%e5%ae%8c%e6%af%95%e6%88%96%e5%8f%91%e7%94%9f%e5%bc%82%e5%b8%b8%e6%97%b6%e8%a7%a6%e5%8f%91%ef%bc%8c%e8%b4%9f%e8%b4%a3%e5%85%b3%e9%97%ad%e8%b5%84%e6%ba%90%e3%80%81%e9%87%8a%e6%94%be%e9%94%81%e7%ad%89%e6%b8%85%e7%90%86%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e5%ba%94%20%e2%80%a6&amp;source=https://lloyal-sudo.github.io/anna/" target="_blank" rel="noopener noreferrer" title="python应用-爬虫（相关）">
       <div class="share-icon icon icon-qq"></div>
@@ -343,10 +464,10 @@ with lock:
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;99</span
+          >&nbsp;263</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:02</span>
+        <span class="icon-coffee">&nbsp;00:03</span>
       </div></div>
 </footer>
 <div class="sidebar-top">
@@ -361,6 +482,18 @@ with lock:
     <li>
       <ul>
         <li><a href="#应用场景">应用场景：</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#对多页发起请求">对多页发起请求</a>
+      <ul>
+        <li><a href="#关键字参数翻页">关键字参数翻页</a></li>
+        <li><a href="#补充url编码解码">补充：url编码/解码</a></li>
+        <li><a href="#表单参数">表单参数</a></li>
+        <li><a href="#json参数">json参数</a></li>
+        <li><a href="#使用正则表达式进行批量修改">使用正则表达式进行批量修改</a></li>
       </ul>
     </li>
   </ul>
