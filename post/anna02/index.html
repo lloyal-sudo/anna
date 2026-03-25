@@ -3,7 +3,7 @@
   lang="zh-cn" 
   data-theme-mode="auto"
   >
-  <head><meta charset="utf-8" />
+  <head><script src="/anna/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=anna/livereload" data-no-instant defer></script><meta charset="utf-8" />
 <meta
   name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -11,7 +11,7 @@
   python应用-爬虫（相关） | Anna
 </title>
 <meta name="description" content=""/><script>
-  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://lloyal-sudo.github.io/anna/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\"}}}");
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"http://localhost:1313/anna/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\"}}}");
   
 </script>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -32,13 +32,13 @@
     as="font"
     type="font/woff2"
     crossorigin="anonymous"
-  /><link rel="stylesheet" href="/anna/css/loader.min.ac746e154f756f8220326eeb52a719f142ab038be5a8ddf30ea5ef15ef2356ea.css" /><meta property="og:type" content="website" />
+  /><link rel="stylesheet" href="/anna/css/loader.css" /><meta property="og:type" content="website" />
   <meta property="og:title" content="python应用-爬虫（相关） | Anna" />
   <meta
     property="og:description"
     content=""
   />
-  <meta property="og:url" content="https://lloyal-sudo.github.io/anna/post/anna02/" />
+  <meta property="og:url" content="http://localhost:1313/anna/post/anna02/" />
   <meta
     property="og:site_name"
     content="欢迎来到紫竹网站"
@@ -47,7 +47,7 @@
   <meta property="article:author" content="Anna" />
   <meta property="article:published_time" content="2026-03-22T21:29:28&#43;08:00" />
   <meta property="article:modified_time" content="2026-03-22T21:29:28&#43;08:00" /><meta name="twitter:card" content="summary" /><meta name="twitter:image" content="https://example.com" />
-<link rel="shortcut icon" href="/anna/favicon.ico"><link rel="stylesheet" href="/anna/css/main.min.ab24545bba583493264f1118ca8a20f66bf61c089488ae4fe3852020291c05f8.css" /><link
+<link rel="shortcut icon" href="/anna/favicon.ico"><link rel="stylesheet" href="/anna/css/main.css" /><link
     rel="preload"
     as="style"
     href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
@@ -154,6 +154,27 @@
         <li><a href="#表单参数">表单参数</a></li>
         <li><a href="#json参数">json参数</a></li>
         <li><a href="#使用正则表达式进行批量修改">使用正则表达式进行批量修改</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#携带cookie的好处">携带cookie的好处</a></li>
+      </ul>
+    </li>
+    <li><a href="#session模块">session模块</a>
+      <ul>
+        <li><a href="#时间戳">时间戳</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#代理ip的获取如天启">代理IP的获取（如：天启）</a></li>
       </ul>
     </li>
   </ul>
@@ -403,8 +424,244 @@ json参数
 </code></pre><ol start="5">
 <li>点击最右边 的 “.*”</li>
 </ol>
+<ul>
+<li>
+<p>池：一种技术【池化技术】。</p>
+<ul>
+<li>鱼塘【鱼池】。</li>
+<li>
+<pre><code>在这个池里面有很多这个同类。
+</code></pre>
+</li>
+<li>
+<pre><code>池里面有很多鱼 =》鱼池。
+</code></pre>
+</li>
+<li>
+<pre><code>池里面有很多 ua =》ua 池。
+</code></pre>
+</li>
+<li>
+<pre><code>池 在代码中如何体现？
+</code></pre>
+</li>
+<li>
+<pre><code>       列表
+</code></pre>
+</li>
+<li>上面这个 ua 池，需要自己去维护。</li>
+</ul>
+</li>
+<li>
+<p>fake-useragent 使用</p>
+</li>
+<li>
+<pre><code>他用来维护 ua 池
+</code></pre>
+</li>
+<li>
+<pre><code>pip install fake-useragent
+</code></pre>
+</li>
+<li>
+<pre><code>使用步骤：
+</code></pre>
+</li>
+<li>
+<pre><code>    1. 导包
+</code></pre>
+</li>
+<li>
+<pre><code>    2. 创建对象
+</code></pre>
+</li>
+<li>
+<pre><code>    3. 获取随机 ua
+</code></pre>
+</li>
+</ul>
+<h1 id="携带cookie">
+<a class="header-anchor" href="#%e6%90%ba%e5%b8%a6cookie"></a>
+携带cookie
+</h1><ul>
+<li><strong>cookie</strong>：是一个&quot;小型文本文件&quot;，是某些网站为了辨别用户身份，<strong>进行Session跟 踪而储存在用户本地终端（浏览器）上的数据（通常经过加密）</strong>，由用户客户端计算机<strong>暂时或永久</strong>保存的信息。</li>
+</ul>
+<h3 id="携带cookie的好处">
+<a class="header-anchor" href="#%e6%90%ba%e5%b8%a6cookie%e7%9a%84%e5%a5%bd%e5%a4%84"></a>
+携带cookie的好处
+</h3><ul>
+<li>能够访问登录后的页面</li>
+<li>能够实现部分反反爬
+<ul>
+<li>一套cookie对应的是一个个人用户的信息，请求太频繁会被识别出爬虫。——&gt;封号</li>
+</ul>
+</li>
+</ul>
+<h2 id="session模块">
+<a class="header-anchor" href="#session%e6%a8%a1%e5%9d%97"></a>
+session模块
+</h2><ul>
+<li>用于处理HTTP会话的模块（管理会话数据），它提供了一个类似字典的接口来管理会话数据。通过session对象，可以在多个请求之间共享cookie</li>
+<li>使用方法：</li>
+</ul>
+<pre tabindex="0"><code># 创建session对象
+s = requests.Session()
+# 发起请求
+s.get()
+# 请求方与requests类似。
+</code></pre><h3 id="时间戳">
+<a class="header-anchor" href="#%e6%97%b6%e9%97%b4%e6%88%b3"></a>
+时间戳
+</h3><ul>
+<li>从1970年1月1日（UTC）起至当前时刻的秒数或毫秒数‌</li>
+</ul>
+<pre tabindex="0"><code># 获取时间戳方法(13位)
+import time
+print(int(time.time()*1000))
+</code></pre><ul>
+<li>**在对网站发起请求时，要更改时间戳（f表达式）.如：</li>
+</ul>
+<pre tabindex="0"><code>params = {
+    &#39;action&#39;: &#39;bookcase&#39;, 
+    &#39;t&#39;: f&#39;{int(time.time()*1000)}&#39;
+}
+</code></pre><h1 id="ip代理收费免费的基本用不了">
+<a class="header-anchor" href="#ip%e4%bb%a3%e7%90%86%e6%94%b6%e8%b4%b9%e5%85%8d%e8%b4%b9%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%94%a8%e4%b8%8d%e4%ba%86"></a>
+IP代理（收费，免费的基本用不了）
+</h1><ul>
+<li>
+<p>IP 全称“互联网协议地址”， 也称IP地址， 是分配给上网设备的数字标签。<!-- raw HTML omitted --></p>
+</li>
+<li>
+<p>当在爬某个网站的时候， 如果对目标网站发起了大量请求，导致对方将我们的电脑的公网IP封锁了，此时我们再发起请求就无法再获取到数据。<!-- raw HTML omitted --></p>
+</li>
+</ul>
+<p>解决方法：<!-- raw HTML omitted -->
+使用代理IP（利用代理IP对网站发起请求）</p>
+<ul>
+<li>本地用户——&gt;代理IP（中间人）——&gt;网站读取到的IP地址</li>
+<li>本地用户&lt;——代理IP（相当于一个网站）&lt;——（响应）网站返回的数据</li>
+</ul>
+<p>使用代理IP：</p>
+<ul>
+<li>利用requests方法中的proxies参数：</li>
+</ul>
+<pre tabindex="0"><code># 设置代理
+proxies = {
+    “http”: &#34;http://【ip】:【端口号】&#34;， 
+    “https”: &#34;http://【ip】:【端口号】&#34;
+    # requests会自动根据不同的网站选择对应的代理（key:http/https）
+}
+# 添加代理发送请求
+requests。get(url, headers=headers, proxies=proxies)
+</code></pre><h3 id="代理ip的获取如天启">
+<a class="header-anchor" href="#%e4%bb%a3%e7%90%86ip%e7%9a%84%e8%8e%b7%e5%8f%96%e5%a6%82%e5%a4%a9%e5%90%af"></a>
+代理IP的获取（如：天启）
+</h3><p><strong>代理IP账号不能随意给他人使用</strong></p>
+<ul>
+<li>筛选免费的代理IP
+<ol>
+<li>
+<p>爬取</p>
+<ul>
+<li>定位数据请求<!-- raw HTML omitted -->
+分析翻页的时候尽量不要分析特殊页【1， 最后一页】<!-- raw HTML omitted --></li>
+<li>发起请求<!-- raw HTML omitted --></li>
+</ul>
+</li>
+<li>
+<p>提取数据
+所有对提取数据的分析，都需要分析【响应文本】。<!-- raw HTML omitted -->
+对响应文本不要有任何改变<!-- raw HTML omitted -->
+匹配：<!-- raw HTML omitted --></p>
+<pre><code> - 搜索匹配内容的关键字，确定位置&lt;br&gt;
+
+ - 写匹配表达式&lt;br&gt;
+
+     `&quot;ip&quot;: &quot;103.17.246.60&quot;` 
+
+     用 (.*?) 替代需要的内容&lt;br&gt;
+
+     `&quot;ip&quot;: &quot;(.*?)&quot;`&lt;br&gt;
+
+     `&quot;ip&quot;: &quot;(.*?)&quot;.*?&quot;port&quot;: &quot;(.*?)&quot;`&lt;br&gt;
+
+     匹配到的内容需要留下来的加括号，不需要留下来的不加括号。
+</code></pre>
+</li>
+<li>
+<p>筛选</p>
+<ul>
+<li>用获取到的 ip 向网站发送请求</li>
+<li>报错【如果报错，失效】
+异常处理</li>
+<li>超时</li>
+</ul>
+<p>只有出现问题了才重试</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>示例：</p>
+<pre tabindex="0"><code>import requests
+import re
+
+headers = {
+    &#39;Accept&#39;: &#39;text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7&#39;,
+    &#39;Referer&#39;: &#39;https://www.kuaidaili.cn/free/fps/2&#39;,
+    &#39;User-Agent&#39;: &#39;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36&#39;,
+
+}
+url = &#39;https://www.kuaidaili.cn/free/fps/1&#39;
+response = requests.get(url,headers=headers, timeout=2)
+
+# 用正则表达式匹配response.text中的IP与端口
+res = re.findall(&#39;&#34;ip&#34;: &#34;(.*?)&#34;.*?&#34;port&#34;: &#34;(.*?)&#34;&#39;, response.text)
+# print(res)
+for ip, port in res:
+    print(f&#34;{ip}:{port}&#34;) # 规定IP与端口号的输出格式
+    url = &#34;https://lloyal-sudo.github.io/lloyal-sudo01/&#34; # 测试IP地址是否有效的网站
+    proxies = {
+        &#34;http&#34;: f&#34;http://{ip}:{port}&#34;,
+        &#34;https&#34;: f&#34;http://{ip}:{port}&#34;,
+    }
+    try:
+        resp = requests.get(url, headers=headers, proxies=proxies, timeout=2)
+        # 设立超时时间参数
+        print(f&#34;代理IP：{ip}:{port}有效&#34;)
+    except:
+        print(f&#34;代理IP：{ip}:{port}无效&#34;)
+</code></pre><h4 id="使用超时参数能够加快我们整体的请求速度但是在正常的网页浏览过程中如果发生速度很慢的情况则需要刷新页面在代码中实现">
+<a class="header-anchor" href="#%e4%bd%bf%e7%94%a8%e8%b6%85%e6%97%b6%e5%8f%82%e6%95%b0%e8%83%bd%e5%a4%9f%e5%8a%a0%e5%bf%ab%e6%88%91%e4%bb%ac%e6%95%b4%e4%bd%93%e7%9a%84%e8%af%b7%e6%b1%82%e9%80%9f%e5%ba%a6%e4%bd%86%e6%98%af%e5%9c%a8%e6%ad%a3%e5%b8%b8%e7%9a%84%e7%bd%91%e9%a1%b5%e6%b5%8f%e8%a7%88%e8%bf%87%e7%a8%8b%e4%b8%ad%e5%a6%82%e6%9e%9c%e5%8f%91%e7%94%9f%e9%80%9f%e5%ba%a6%e5%be%88%e6%85%a2%e7%9a%84%e6%83%85%e5%86%b5%e5%88%99%e9%9c%80%e8%a6%81%e5%88%b7%e6%96%b0%e9%a1%b5%e9%9d%a2%e5%9c%a8%e4%bb%a3%e7%a0%81%e4%b8%ad%e5%ae%9e%e7%8e%b0"></a>
+使用超时参数能够加快我们整体的请求速度，但是在正常的网页浏览过程中，如果发生速度很慢的情况，则需要刷新页面(在代码中实现)
+</h4><p>在代码中<strong>刷新请求</strong>：</p>
+<pre tabindex="0"><code># 安装retrying ：pip install retrying (或 python -m pip install retrying) 若两个命令都不行的话就使用镜像源地址
+from retrying import retry
+@retry(stop_max_attempt_number=3)# 设置重试次数（只有出现错误才会重试）
+# 类似于 @函数名称 写法 =》装饰器&lt;br&gt;
+# 装饰器装饰的是函数或者方法
+</code></pre><p>requests的其他参数</p>
+<ul>
+<li>重定向
+<ul>
+<li>浏览器的请求从当前URL自动转向另一个目标地址，其核心目的是在不中断用户体验的前提下，实现资源的重新定位或访问<!-- raw HTML omitted -->
+例如：<!-- raw HTML omitted -->
+<ul>
+<li><a href="http://www.baidu.com">http://www.baidu.com</a></li>
+<li>重定向后会自行修改为：<!-- raw HTML omitted -->
+<a href="https://www.baidu.com">https://www.baidu.com</a></li>
+</ul>
+</li>
+<li>取消重定向：
+<ul>
+<li>response = requests.get(url, allow_redirects=False)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 </div>
-    <footer class="article-footer"><div class="share-wrapper"><a href="https://connect.qq.com/widget/shareqq/index.html?url=https://lloyal-sudo.github.io/anna/post/anna02/&amp;title=python%e5%ba%94%e7%94%a8-%e7%88%ac%e8%99%ab%ef%bc%88%e7%9b%b8%e5%85%b3%ef%bc%89&amp;desc=%20%e7%8a%b6%e6%80%81%e7%a0%81%20HTTP%e7%8a%b6%e6%80%81%e7%a0%81&amp;ndash;&amp;gt;%e7%94%a8%e4%bb%a5%e8%a1%a8%e7%a4%ba%e7%bd%91%e9%a1%b5%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%b6%85%e6%96%87%e6%9c%ac%e4%bc%a0%e8%be%93%e5%8d%8f%e8%ae%ae%e5%93%8d%e5%ba%94%e7%8a%b6%e6%80%81%e7%9a%84%e4%b8%89%e4%bd%8d%e6%95%b0%e5%ad%97%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%b8%b8%e8%a7%81%e7%8a%b6%e6%80%81%e7%a0%81%ef%bc%9a%0a1xx%ef%bc%9a%e6%b6%88%e6%81%af%28%e8%af%b7%e6%b1%82%e5%b7%b2%e8%a2%ab%e6%8e%a5%e5%8f%97%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bb%a7%e7%bb%ad%e5%a4%84%e7%90%86%e3%80%82%29%202xx%ef%bc%9a%e6%88%90%e5%8a%9f%e8%ae%bf%e9%97%ae%ef%bc%88200OK%ef%bc%89%203xx%ef%bc%9a%e9%87%8d%e5%ae%9a%e5%90%91%ef%bc%88302%e4%b8%b4%e6%97%b6%e8%bd%ac%e7%a7%bb%e8%87%b3%e6%96%b0%e7%9a%84url%ef%bc%89%204xx%ef%bc%9a%e8%af%b7%e6%b1%82%e9%94%99%e8%af%af%ef%bc%88404Not%20Found%ef%bc%89%205xx:%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af%ef%bc%88502Bad%20Gateway%ef%bc%89%20with%e7%94%a8%e6%b3%95%20with%e8%af%ad%e5%8f%a5&amp;ndash;&amp;gt;%20%e6%a0%b8%e5%bf%83%ef%bc%9a%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%99%a8%20%e9%81%b5%e5%be%aa%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%8d%8f%e8%ae%ae%ef%bc%8c%e6%b6%89%e5%8f%8a%e4%b8%a4%e4%b8%aa%e6%96%b9%e6%b3%95%ef%bc%9a%20enter%ef%bc%9a%e8%bf%9b%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%89%8d%e6%89%a7%e8%a1%8c%ef%bc%8c%e8%bf%94%e5%9b%9e%e8%b5%84%e6%ba%90%e5%af%b9%e8%b1%a1%ef%bc%88%e5%a6%82%e6%96%87%e4%bb%b6%ef%bc%89%e5%b9%b6%e8%b5%8b%e5%80%bc%e7%bb%99as%e5%90%8e%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%20exit%ef%bc%9a%e4%bb%a3%e7%a0%81%e5%9d%97%e6%89%a7%e8%a1%8c%e5%ae%8c%e6%af%95%e6%88%96%e5%8f%91%e7%94%9f%e5%bc%82%e5%b8%b8%e6%97%b6%e8%a7%a6%e5%8f%91%ef%bc%8c%e8%b4%9f%e8%b4%a3%e5%85%b3%e9%97%ad%e8%b5%84%e6%ba%90%e3%80%81%e9%87%8a%e6%94%be%e9%94%81%e7%ad%89%e6%b8%85%e7%90%86%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e5%ba%94%20%e2%80%a6&amp;source=https://lloyal-sudo.github.io/anna/" target="_blank" rel="noopener noreferrer" title="python应用-爬虫（相关）">
+    <footer class="article-footer"><div class="share-wrapper"><a href="https://connect.qq.com/widget/shareqq/index.html?url=http://localhost:1313/anna/post/anna02/&amp;title=python%e5%ba%94%e7%94%a8-%e7%88%ac%e8%99%ab%ef%bc%88%e7%9b%b8%e5%85%b3%ef%bc%89&amp;desc=%20%e7%8a%b6%e6%80%81%e7%a0%81%20HTTP%e7%8a%b6%e6%80%81%e7%a0%81&amp;ndash;&amp;gt;%e7%94%a8%e4%bb%a5%e8%a1%a8%e7%a4%ba%e7%bd%91%e9%a1%b5%e6%9c%8d%e5%8a%a1%e5%99%a8%e8%b6%85%e6%96%87%e6%9c%ac%e4%bc%a0%e8%be%93%e5%8d%8f%e8%ae%ae%e5%93%8d%e5%ba%94%e7%8a%b6%e6%80%81%e7%9a%84%e4%b8%89%e4%bd%8d%e6%95%b0%e5%ad%97%e4%bb%a3%e7%a0%81%e3%80%82%20%e5%b8%b8%e8%a7%81%e7%8a%b6%e6%80%81%e7%a0%81%ef%bc%9a%0a1xx%ef%bc%9a%e6%b6%88%e6%81%af%28%e8%af%b7%e6%b1%82%e5%b7%b2%e8%a2%ab%e6%8e%a5%e5%8f%97%ef%bc%8c%e9%9c%80%e8%a6%81%e7%bb%a7%e7%bb%ad%e5%a4%84%e7%90%86%e3%80%82%29%202xx%ef%bc%9a%e6%88%90%e5%8a%9f%e8%ae%bf%e9%97%ae%ef%bc%88200OK%ef%bc%89%203xx%ef%bc%9a%e9%87%8d%e5%ae%9a%e5%90%91%ef%bc%88302%e4%b8%b4%e6%97%b6%e8%bd%ac%e7%a7%bb%e8%87%b3%e6%96%b0%e7%9a%84url%ef%bc%89%204xx%ef%bc%9a%e8%af%b7%e6%b1%82%e9%94%99%e8%af%af%ef%bc%88404Not%20Found%ef%bc%89%205xx:%e6%9c%8d%e5%8a%a1%e5%99%a8%e9%94%99%e8%af%af%ef%bc%88502Bad%20Gateway%ef%bc%89%20with%e7%94%a8%e6%b3%95%20with%e8%af%ad%e5%8f%a5&amp;ndash;&amp;gt;%20%e6%a0%b8%e5%bf%83%ef%bc%9a%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%99%a8%20%e9%81%b5%e5%be%aa%e4%b8%8a%e4%b8%8b%e6%96%87%e7%ae%a1%e7%90%86%e5%8d%8f%e8%ae%ae%ef%bc%8c%e6%b6%89%e5%8f%8a%e4%b8%a4%e4%b8%aa%e6%96%b9%e6%b3%95%ef%bc%9a%20enter%ef%bc%9a%e8%bf%9b%e5%85%a5%e4%bb%a3%e7%a0%81%e5%9d%97%e5%89%8d%e6%89%a7%e8%a1%8c%ef%bc%8c%e8%bf%94%e5%9b%9e%e8%b5%84%e6%ba%90%e5%af%b9%e8%b1%a1%ef%bc%88%e5%a6%82%e6%96%87%e4%bb%b6%ef%bc%89%e5%b9%b6%e8%b5%8b%e5%80%bc%e7%bb%99as%e5%90%8e%e7%9a%84%e5%8f%98%e9%87%8f%e3%80%82%20exit%ef%bc%9a%e4%bb%a3%e7%a0%81%e5%9d%97%e6%89%a7%e8%a1%8c%e5%ae%8c%e6%af%95%e6%88%96%e5%8f%91%e7%94%9f%e5%bc%82%e5%b8%b8%e6%97%b6%e8%a7%a6%e5%8f%91%ef%bc%8c%e8%b4%9f%e8%b4%a3%e5%85%b3%e9%97%ad%e8%b5%84%e6%ba%90%e3%80%81%e9%87%8a%e6%94%be%e9%94%81%e7%ad%89%e6%b8%85%e7%90%86%e5%b7%a5%e4%bd%9c%e3%80%82%0a%e5%ba%94%20%e2%80%a6&amp;source=http://localhost:1313/anna/" target="_blank" rel="noopener noreferrer" title="python应用-爬虫（相关）">
       <div class="share-icon icon icon-qq"></div>
     </a><a href="javascript:;"  title="python应用-爬虫（相关）">
       <div class="share-icon icon icon-weixin"><div id="share-weixin">
@@ -464,10 +721,10 @@ json参数
         >
       </div><div>
         <span class="icon-brush"
-          >&nbsp;263</span
+          >&nbsp;510</span
         >
         &nbsp;|&nbsp;
-        <span class="icon-coffee">&nbsp;00:03</span>
+        <span class="icon-coffee">&nbsp;00:04</span>
       </div></div>
 </footer>
 <div class="sidebar-top">
@@ -494,6 +751,27 @@ json参数
         <li><a href="#表单参数">表单参数</a></li>
         <li><a href="#json参数">json参数</a></li>
         <li><a href="#使用正则表达式进行批量修改">使用正则表达式进行批量修改</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#携带cookie的好处">携带cookie的好处</a></li>
+      </ul>
+    </li>
+    <li><a href="#session模块">session模块</a>
+      <ul>
+        <li><a href="#时间戳">时间戳</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#代理ip的获取如天启">代理IP的获取（如：天启）</a></li>
       </ul>
     </li>
   </ul>
@@ -567,7 +845,7 @@ json参数
     
     
     
-    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/anna/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/anna/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/anna/js/main.js"  ></script><script src="/anna/js/aos.js"  ></script><script>
     var aosInit = () => {
       AOS.init({
         duration: 1000,
@@ -581,7 +859,7 @@ json参数
     } else {
       aosInit();
     }
-  </script><script src="/anna/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+  </script><script src="/anna/js/pjax_main.js" data-pjax ></script><script>
   var setupFirework = () => {
     if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
       if (window.firework) {
@@ -605,11 +883,11 @@ json参数
         window.REIMU_POST = {
           author: "Anna",
           title: "python应用-爬虫（相关）",
-          url: "https:\/\/lloyal-sudo.github.io\/anna\/post\/anna02\/",
+          url: "http:\/\/localhost:1313\/anna\/post\/anna02\/",
           description: " 状态码 HTTP状态码\u0026ndash;\u0026gt;用以表示网页服务器超文本传输协议响应状态的三位数字代码。 常见状态码：\n1xx：消息(请求已被接受，需要继续处理。) 2xx：成功访问（200OK） 3xx：重定向（302临时转移至新的url） 4xx：请求错误（404Not Found） 5xx:服务器错误（502Bad Gateway） with用法 with语句\u0026ndash;\u0026gt; 核心：上下文管理器 遵循上下文管理协议，涉及两个方法： enter：进入代码块前执行，返回资源对象（如文件）并赋值给as后的变量。 exit：代码块执行完毕或发生异常时触发，负责关闭资源、释放锁等清理工作。\n应 …",
           cover: "https:\/\/example.com",
         };
-      </script><script src="/anna/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/anna/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+      </script><script src="/anna/js/insert_highlight.js" data-pjax ></script><script src="/anna/js/tabs.js" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
           if (_$$(`${gallery} ${children}`).length > 0) {
             new PhotoSwipeLightbox({
               gallery,

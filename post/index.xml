@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 欢迎来到紫竹网站</title>
-    <link>https://lloyal-sudo.github.io/anna/post/</link>
+    <link>http://localhost:1313/anna/post/</link>
     <description>Recent content from 欢迎来到紫竹网站</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
@@ -15,7 +15,7 @@
     <lastBuildDate>Sun, 22 Mar 2026 21:29:28 +0800</lastBuildDate>
     
     
-    <atom:link href="https://lloyal-sudo.github.io/anna/post/index.xml" rel="self" type="application/rss&#43;xml" />
+    <atom:link href="http://localhost:1313/anna/post/index.xml" rel="self" type="application/rss&#43;xml" />
     
 
     
@@ -23,10 +23,10 @@
 
     <item>
       <title>python应用-爬虫（相关）</title>
-      <link>https://lloyal-sudo.github.io/anna/post/anna02/</link>
+      <link>http://localhost:1313/anna/post/anna02/</link>
       <pubDate>Sun, 22 Mar 2026 21:29:28 &#43;0800</pubDate>
       <author>xxx@example.com (Anna)</author>
-      <guid>https://lloyal-sudo.github.io/anna/post/anna02/</guid>
+      <guid>http://localhost:1313/anna/post/anna02/</guid>
       <description>
         <![CDATA[<h1>python应用-爬虫（相关）</h1><p>作者：Anna（xxx@example.com）</p>
         
@@ -78,7 +78,7 @@ with lock:
 响应里面的属性(重点)：
 </h1><p>响应内容：</p>
         
-        <hr><p>本文2026-03-22首发于<a href='https://lloyal-sudo.github.io/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
+        <hr><p>本文2026-03-22首发于<a href='http://localhost:1313/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
       </description>
       
     </item>
@@ -87,10 +87,10 @@ with lock:
 
     <item>
       <title>Linux命令ssh</title>
-      <link>https://lloyal-sudo.github.io/anna/post/anna01/</link>
+      <link>http://localhost:1313/anna/post/anna01/</link>
       <pubDate>Sun, 22 Mar 2026 14:16:01 &#43;0800</pubDate>
       <author>xxx@example.com (Anna)</author>
-      <guid>https://lloyal-sudo.github.io/anna/post/anna01/</guid>
+      <guid>http://localhost:1313/anna/post/anna01/</guid>
       <description>
         <![CDATA[<h1>Linux命令ssh</h1><p>作者：Anna（xxx@example.com）</p>
         
@@ -116,7 +116,7 @@ SSH命令连接服务器
 </h2><pre tabindex="0"><code>exit
 </code></pre>
         
-        <hr><p>本文2026-03-22首发于<a href='https://lloyal-sudo.github.io/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
+        <hr><p>本文2026-03-22首发于<a href='http://localhost:1313/anna/'>欢迎来到紫竹网站</a>，最后修改于2026-03-22</p>]]>
       </description>
       
     </item>
